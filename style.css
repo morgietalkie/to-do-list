@@ -1,0 +1,301 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  background: linear-gradient(52deg, rgba(91, 255, 233, 1) 0%, rgba(71, 181, 255, 1) 100%);
+}
+
+#editform {
+  display: none;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+  background: #fff;
+  padding: 10%;
+}
+
+#addform {
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+  background: #fff;
+}
+
+.button_wrapper {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.removeTodo,
+.edit {
+  border: 0;
+  border-radius: 2px;
+  background: rgba(134, 134, 134, 0.308);
+  color: rgb(49, 49, 49);
+  padding: 10px;
+
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+button:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+h1 {
+  font-size: 1.5em;
+  line-height: 27px;
+}
+h2,
+h3 {
+  font-size: 1em;
+  line-height: 27px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+label {
+  font-size: 0.9em;
+  color: black;
+}
+
+.title {
+  text-align: center;
+  color: rgba(71, 181, 255, 1);
+  text-transform: uppercase;
+  font-size: 2em;
+  background: #fff;
+  width: 80vw;
+  margin: 200px auto 0;
+  padding-top: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  margin: 20px;
+}
+
+form > input {
+  margin: 5px 0;
+  background: rgb(247, 246, 246);
+  box-shadow: inset 0 0 2px rgb(206, 206, 206);
+  border: none;
+}
+
+form > input:last-child {
+  box-shadow: 0 0 2px rgb(206, 206, 206);
+  cursor: pointer;
+  background: rgba(71, 181, 255, 1);
+  color: white;
+  border-radius: 2px;
+  padding: 20px;
+  font-size: 1em;
+  width: fit-content;
+  margin: auto;
+}
+
+.app > article {
+  background: #fff;
+}
+
+.app > article:nth-last-child(2n + 0) {
+  background: rgb(248, 248, 248);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  transition: 2s;
+  width: 80%;
+  margin: 0 auto 200px;
+  opacity: 0;
+}
+
+.todo {
+  padding: 20px 10px;
+  border-radius: 2px;
+  text-align: right;
+  line-height: 27px;
+  position: relative;
+  border-bottom: 1px solid #dfe1e6;
+  padding: 28px 32px;
+  background: #fff;
+  border-top: 1px solid #dfe1e6;
+}
+
+.todo h1 {
+  color: black;
+  text-align: left;
+}
+
+.todo h2,
+.todo h3,
+.todo p {
+  color: rgba(0, 0, 0, 0.815);
+  text-align: left;
+}
+
+.todo:hover,
+.todo:hover {
+  opacity: 0.9;
+}
+
+/* ANIMATIONS */
+
+@keyframes fade_out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade_in_out {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes car_updated {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fade_out {
+  animation: fade_out 1s forwards;
+}
+
+.fade_in {
+  animation: fade_in 1s forwards;
+}
+
+.fade_in_out {
+  animation: fade_in_out 3s forwards;
+}
+
+.todo {
+  animation: todo_updated 1.5s forwards;
+  animation-delay: 1s;
+}
+
+.info_box {
+  position: fixed;
+  background: rgba(109, 109, 109, 0.466);
+  border-radius: 2px;
+  color: white;
+  padding: 20px 10px;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+}
+
+input[type="radio"]:checked + label {
+  color: lightskyblue;
+  font-style: normal;
+  transition: 0.2s;
+  background: rgb(230, 230, 230);
+  padding: 10px;
+  border-radius: 2px;
+}
+
+input[type="radio"] {
+  opacity: 0;
+}
+.radios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.title_box label,
+.date_wrapper label {
+  border: #dfe1e6 solid 1px;
+  background: #dfe1e6;
+  padding: 0 10px;
+}
+
+.title_box {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 10px;
+  line-height: 40px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.title_box input {
+  font-size: 10px;
+  border: #dfe1e6 solid 1px;
+}
+
+.date_wrapper {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 10px;
+  line-height: 40px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.date_wrapper input {
+  font-size: 10px;
+  border: #dfe1e6 solid 1px;
+  width: fit-content;
+}

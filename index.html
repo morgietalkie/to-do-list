@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Post todo</title>
+  </head>
+  <body>
+    <h1 class="title">Add a todo</h1>
+
+    <div class="input_field">
+      <form id="editform">
+        <div class="title_box">
+        <label for="title">Title </label>
+        <input type="text" name="title" placeholder="todo title" required />
+      </div>
+
+        <div class="radios">
+            <div>
+                <input type="radio" id="editurgent" name="edittedoption" value="Urgent"
+                       checked>
+                <label for="editurgent">Urgent</label>
+              </div>
+              
+              <div>
+                <input type="radio" id="editpersonal" name="edittedoption" value="Personal">
+                <label for="editpersonal">Personal</label>
+              </div>
+              
+              <div>
+                <input type="radio" id="editstudy" name="edittedoption" value="Study">
+                <label for="editstudy">Study</label>
+              </div>
+              <div>
+                  <input type="radio" id="editwork" name="edittedoption" value="Work">
+                  <label for="editwork">Work</label>
+                </div>
+              </div>
+              <div class="date_wrapper">
+        <label for="date">Date</label>
+        <input type="time" name="time"  required />
+        <input type="date" name="date"  required /></div>
+
+        <input name="id" type="hidden" />
+        <input class="submitted" type="submit" value="Edit todo" name="submit" />
+      </form>
+
+      <form id="addform">
+        <div class="title_box">
+        <label for="title">Title </label>
+        <input type="text" name="title" placeholder="todo title" required /></div>
+        <div class="radios">
+        <div>
+            <input type="radio" id="Urgent" name="option" value="Urgent"
+                   checked>
+            <label for="Urgent">Urgent</label>
+          </div>
+          
+          <div>
+            <input type="radio" id="Personal" name="option" value="Personal">
+            <label for="Personal">Personal</label>
+          </div>
+          
+          <div>
+            <input type="radio" id="Study" name="option" value="Study">
+            <label for="Study">Study</label>
+          </div>
+          <div>
+              <input type="radio" id="Work" name="option" value="Work">
+              <label for="Work">Work</label>
+            </div>
+          </div>
+          <div class="date_wrapper">
+        <label for="date">Date</label>
+        <input type="time" name="time"  required />
+        <input type="date"  name="date"  required /></div>
+
+        <input class="submitted" type="submit" value="Add todo" name="submit" />
+      </form>
+
+ 
+
+    <div class="app">
+      <template>
+        <article class="todo">
+          <h1></h1>
+          <h2></h2>
+          <p class="p1"></p>
+          <p class="p2"></p>
+          <div class="button_wrapper">
+            <button class="edit">Edit</button>
+            <button class="removeTodo">Remove todo</button>
+          </div>
+        </article>
+      </template>
+    </div>
+
+    <div class="info_box">
+      <h1>todo updated succesfully</h1>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
